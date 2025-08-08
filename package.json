@@ -1,0 +1,90 @@
+{
+  "name": "favorite-files-search",
+  "displayName": "Favorite Files Search",
+  "description": "Quickly search and open files from a predefined list for enhanced productivity",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/user/favorite-files-search.git"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:favorite-files-search.searchFiles"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "favorite-files-search.searchFiles",
+        "title": "Search Favorite Files",
+        "category": "Favorite Files"
+      },
+      {
+        "command": "favorite-files-search.refresh",
+        "title": "Refresh Favorite Files List",
+        "category": "Favorite Files"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "favorite-files-search.searchFiles",
+        "key": "cmd+shift+f",
+        "mac": "cmd+shift+f",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "title": "Favorite Files Search",
+      "properties": {
+        "favoriteFilesSearch.fileListPath": {
+          "type": "string",
+          "default": "~/favorite-files.txt",
+          "description": "Path to the text file containing your favorite file paths"
+        },
+        "favoriteFilesSearch.maxResults": {
+          "type": "number",
+          "default": 50,
+          "description": "Maximum number of search results to display"
+        },
+        "favoriteFilesSearch.searchMode": {
+          "type": "string",
+          "enum": [
+            "filename",
+            "fullpath",
+            "both"
+          ],
+          "default": "both",
+          "description": "Search mode: filename only, full path, or both"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/glob": "^8.0.0",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.74.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "glob": "^10.0.0",
+    "typescript": "^4.9.4",
+    "vsce": "^2.15.0"
+  },
+  "dependencies": {
+    "fs-extra": "^11.0.0"
+  }
+}
