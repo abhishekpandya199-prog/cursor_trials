@@ -1,10 +1,10 @@
-# Favorite Files Search
+# FileRocket 🚀
 
-A professional VS Code extension that allows you to quickly search and open files from a predefined list, perfect for large workspaces with thousands of files.
+Launch your favorite files instantly! A powerful VS Code extension that lets you quickly search and open files from your personalized list, perfect for large workspaces with thousands of files.
 
 ## Features
 
-- 🚀 **Dedicated Search**: Specialized search command for your favorite files
+- 🚀 **Instant Launch**: Specialized launch command for your most-used files
 - 📝 **Customizable**: Configure your own list of frequently used files
 - 🎯 **Smart Search**: Search by both filename and full path simultaneously
 - ⚡ **Quick Access**: Use `Cmd+Shift+F` for instant access
@@ -61,29 +61,29 @@ Open VS Code settings and configure:
 ## Usage
 
 ### Method 1: Keyboard Shortcut (Recommended)
-- **Mac**: `Cmd+Shift+F`
-- **Windows/Linux**: `Ctrl+Shift+F`
+- **Mac**: `Cmd+Alt+F`
+- **Windows/Linux**: `Ctrl+Alt+F`
 
 ### Method 2: Command Palette
 1. Press `Cmd+Shift+P` (Mac) or `Ctrl+Shift+P` (Windows/Linux)
-2. Type "Search Favorite Files"
+2. Type "🚀 Launch Files"
 3. Select the command
 
 ### Method 3: Refresh Command
-1. Use "Refresh Favorite Files List" command to reload your file list
+1. Use "🔄 Refresh Launch List" command to reload your file list
 
-### Search Interface
-- Type to search through your favorite files
+### Launch Interface
+- Type to search through your launch files
 - Results show filename, full path, and existence status
-- Click or press Enter to open a file
+- Click or press Enter to launch a file
 
 ## Settings
 
 | Setting | Description | Default |
 |---------|-------------|---------|
-| `favoriteFilesSearch.fileListPath` | Path to your favorite files list | `~/favorite-files.txt` |
-| `favoriteFilesSearch.maxResults` | Maximum search results to display | `50` |
-| `favoriteFilesSearch.searchMode` | Search mode (filename/fullpath/both) | `both` |
+| `filerocket.fileListPath` | Path to your launch files list | `~/favorite-files.txt` |
+| `filerocket.maxResults` | Maximum search results to display | `50` |
+| `filerocket.searchMode` | Search mode (filename/fullpath/both) | `both` |
 
 ## Features in Detail
 
@@ -157,7 +157,7 @@ MIT License - see LICENSE file for details
 
 If you encounter any issues or have feature requests, please:
 
-1. Check the [Issues](https://github.com/your-repo/issues) page
+1. Check the [Issues](https://github.com/abhishekpandya199-prog/cursor_trials/issues) page
 2. Create a new issue with detailed information
 3. Include your VS Code version and OS details
 

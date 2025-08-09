@@ -10,13 +10,13 @@ interface FileEntry {
 }
 
 export function activate(context: vscode.ExtensionContext) {
-    console.log('Favorite Files Search extension is now active!');
+    console.log('FileRocket extension is now active! 🚀');
 
-    let disposable = vscode.commands.registerCommand('favorite-files-search.searchFiles', async () => {
+    let disposable = vscode.commands.registerCommand('filerocket.searchFiles', async () => {
         try {
             const files = await loadFavoriteFiles();
             if (files.length === 0) {
-                vscode.window.showWarningMessage('No favorite files found. Please check your configuration.');
+                vscode.window.showWarningMessage('No launch files found. Please check your FileRocket configuration.');
                 return;
             }
 
@@ -32,15 +32,15 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(disposable);
 
     // Register refresh command
-    const refreshCommand = vscode.commands.registerCommand('favorite-files-search.refresh', async () => {
-        vscode.window.showInformationMessage('Favorite files list refreshed!');
+    const refreshCommand = vscode.commands.registerCommand('filerocket.refresh', async () => {
+        vscode.window.showInformationMessage('FileRocket launch list refreshed! 🚀');
     });
 
     context.subscriptions.push(refreshCommand);
 }
 
 async function loadFavoriteFiles(): Promise<FileEntry[]> {
-    const config = vscode.workspace.getConfiguration('favoriteFilesSearch');
+    const config = vscode.workspace.getConfiguration('filerocket');
     const fileListPath = config.get<string>('fileListPath', '~/favorite-files.txt');
     
     // Expand ~ to home directory
@@ -49,7 +49,7 @@ async function loadFavoriteFiles(): Promise<FileEntry[]> {
         : fileListPath;
 
     if (!await fs.pathExists(expandedPath)) {
-        throw new Error(`Favorite files list not found at: ${expandedPath}`);
+        throw new Error(`FileRocket launch list not found at: ${expandedPath}`);
     }
 
     const content = await fs.readFile(expandedPath, 'utf-8');
@@ -74,11 +74,11 @@ async function loadFavoriteFiles(): Promise<FileEntry[]> {
 }
 
 async function showFilePicker(files: FileEntry[]): Promise<FileEntry | undefined> {
-    const config = vscode.workspace.getConfiguration('favoriteFilesSearch');
+    const config = vscode.workspace.getConfiguration('filerocket');
     const maxResults = config.get<number>('maxResults', 50);
 
     const quickPick = vscode.window.createQuickPick<vscode.QuickPickItem>();
-    quickPick.placeholder = 'Search your favorite files by filename or path...';
+    quickPick.placeholder = '🚀 Launch your files by filename or path...';
     quickPick.matchOnDescription = true;
     quickPick.matchOnDetail = true;
 
@@ -118,7 +118,7 @@ async function openFile(fileEntry: FileEntry): Promise<void> {
         const document = await vscode.workspace.openTextDocument(uri);
         await vscode.window.showTextDocument(document, { preview: false });
         
-        vscode.window.showInformationMessage(`Opened: ${fileEntry.filename}`);
+        vscode.window.showInformationMessage(`🚀 Launched: ${fileEntry.filename}`);
     } catch (error) {
         vscode.window.showErrorMessage(`Failed to open file: ${fileEntry.path}`);
     }

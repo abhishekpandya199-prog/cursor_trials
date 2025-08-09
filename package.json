@@ -1,57 +1,85 @@
 {
-  "name": "favorite-files-search",
-  "displayName": "Favorite Files Search",
-  "description": "Quickly search and open files from a predefined list for enhanced productivity",
+  "name": "filerocket",
+  "displayName": "FileRocket",
+  "description": "🚀 Launch your favorite files instantly! Quick search and access to your most-used files.",
   "version": "0.1.0",
+  "publisher": "abhishekpandya199",
+  "author": {
+    "name": "Abhishek Pandya",
+    "url": "https://github.com/abhishekpandya199-prog"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/user/favorite-files-search.git"
+    "url": "https://github.com/abhishekpandya199-prog/cursor_trials.git"
+  },
+  "bugs": {
+    "url": "https://github.com/abhishekpandya199-prog/cursor_trials/issues"
+  },
+  "homepage": "https://github.com/abhishekpandya199-prog/cursor_trials#readme",
+  "icon": "icon.png",
+  "keywords": [
+    "files",
+    "search",
+    "favorite",
+    "quick-open",
+    "productivity",
+    "file-manager",
+    "workspace",
+    "rocket",
+    "launch",
+    "fast"
+  ],
+  "galleryBanner": {
+    "color": "#FF6B35",
+    "theme": "dark"
   },
   "engines": {
     "vscode": "^1.74.0"
   },
   "categories": [
-    "Other"
+    "Other",
+    "Productivity",
+    "File Management"
   ],
   "activationEvents": [
-    "onCommand:favorite-files-search.searchFiles"
+    "onCommand:filerocket.searchFiles"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "favorite-files-search.searchFiles",
-        "title": "Search Favorite Files",
-        "category": "Favorite Files"
+        "command": "filerocket.searchFiles",
+        "title": "🚀 Launch Files",
+        "category": "FileRocket"
       },
       {
-        "command": "favorite-files-search.refresh",
-        "title": "Refresh Favorite Files List",
-        "category": "Favorite Files"
+        "command": "filerocket.refresh",
+        "title": "🔄 Refresh Launch List",
+        "category": "FileRocket"
       }
     ],
     "keybindings": [
       {
-        "command": "favorite-files-search.searchFiles",
-        "key": "cmd+shift+f",
-        "mac": "cmd+shift+f",
-        "when": "editorTextFocus"
+        "command": "filerocket.searchFiles",
+        "key": "ctrl+alt+f",
+        "mac": "cmd+alt+f",
+        "when": "!findWidgetVisible"
       }
     ],
     "configuration": {
-      "title": "Favorite Files Search",
+      "title": "FileRocket",
       "properties": {
-        "favoriteFilesSearch.fileListPath": {
+        "filerocket.fileListPath": {
           "type": "string",
           "default": "~/favorite-files.txt",
-          "description": "Path to the text file containing your favorite file paths"
+          "description": "Path to the text file containing your launch file paths"
         },
-        "favoriteFilesSearch.maxResults": {
+        "filerocket.maxResults": {
           "type": "number",
           "default": 50,
           "description": "Maximum number of search results to display"
         },
-        "favoriteFilesSearch.searchMode": {
+        "filerocket.searchMode": {
           "type": "string",
           "enum": [
             "filename",

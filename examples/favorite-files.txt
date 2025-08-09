@@ -1,0 +1,34 @@
+# Sample Favorite Files List
+# Lines starting with # are comments and will be ignored
+# Add one file path per line - both absolute and relative paths work
+
+# Common project files
+~/Documents/my-project/src/main.js
+~/Documents/my-project/package.json
+~/Documents/my-project/README.md
+
+# Configuration files
+~/.vscode/settings.json
+~/.gitconfig
+~/.bashrc
+
+# Frequently edited files
+~/Documents/notes/todo.md
+~/Documents/scripts/deploy.sh
+~/Desktop/quick-notes.txt
+
+# Example absolute paths (update these to match your system)
+/Users/yourname/Documents/important-file.txt
+/Users/yourname/workspace/project/config.json
+
+# Example relative paths (relative to workspace)
+src/extension.ts
+package.json
+tsconfig.json
+
+# More examples
+~/Documents/projects/web-app/src/components/Header.js
+~/Documents/projects/web-app/src/styles/main.css
+~/Documents/projects/api/routes/users.js
+~/Documents/configs/nginx.conf
+~/Scripts/backup-database.sql
